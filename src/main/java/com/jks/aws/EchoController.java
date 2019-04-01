@@ -12,8 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class EchoController {
 
     @GetMapping("/v1/{name}")
-    public String echo(@PathVariable String name){
+    public String echoV1(@PathVariable String name){
         log.info("echo request received:{}", name);
         return "Hello "+name;
+    }
+
+    @GetMapping("/v2/{name}")
+    public String echoV2(@PathVariable String name){
+        log.info("echo request received:{}", name);
+        return "Hello "+name+". Awesome work!!";
     }
 }
